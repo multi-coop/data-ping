@@ -23,6 +23,12 @@
       "subtype": "image"
     },
     {
+      "name": "SOURCE",
+      "subtype": "tags",
+      "tagSeparator": "–",
+      "allowNew": true
+    },
+    {
       "name": "SOURCE_codes",
       "subtype": "tags",
       "tagSeparator": "-",
@@ -34,9 +40,24 @@
       "tagSeparator": "-"
     },
     {
+      "name": "PUBLICS",
+      "subtype": "tags",
+      "tagSeparator": "–"
+    },
+    {
+      "name": "TYPOLOGIE",
+      "subtype": "tags",
+      "tagSeparator": "-"
+    },
+    {
       "name": "ADRESSE",
       "subtype": "longtext",
       "maxLength": 20
+    },
+    {
+      "name": "DEPARTEMENT_NOM",
+      "subtype": "tag",
+      "tagSeparator": "/"
     },
     {
       "name": "latitude",

@@ -49,6 +49,20 @@
       "type": "string"
     },
     {
+      "name": "PUBLICS",
+      "title": "Types de publics",
+      "type": "string"
+    },
+    {
+      "name": "TYPOLOGIE",
+      "title": "Typologie",
+      "type": "string"
+    },
+    {
+      "name": "DEPARTEMENT_NOM",
+      "title": "Département"
+    },
+    {
       "name": "latitude",
       "title": "Latitude du siège",
       "type": "number"

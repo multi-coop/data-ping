@@ -1,10 +1,10 @@
 {
   "charts": [
     {
-      "title": { "fr": "REPARTITION PAR STATUT JURIDIQUE" },
+      "title": { "fr": "REPARTITION PAR SOURCE" },
       "cols": 4,
-      "unit": { "fr": "Structure(s)" },
-      "aggregatebyfield": "Statut juridique",
+      "unit": { "fr": "Lieux(x)" },
+      "aggregatebyfield": "SOURCE_codes",
       "aggregationtype": "countitems",
       "chartOptions": {
         "chart": {
@@ -18,10 +18,10 @@
       }
     },
     {
-      "title": { "fr": "REPARTITION PAR REGION" },
-      "cols": 8,
-      "unit": { "fr": "Structure(s)" },
-      "aggregatebyfield": "Région(s)",
+      "title": { "fr": "REPARTITION PAR DEPARTEMENT" },
+      "cols": 12,
+      "unit": { "fr": "Lieu(x)" },
+      "aggregatebyfield": "DEPARTEMENT_NOM",
       "aggregationtype": "countitems",
       "chartOptions": {
         "chart": {
