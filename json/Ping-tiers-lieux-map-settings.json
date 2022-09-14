@@ -4,8 +4,8 @@
     "url"              : "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
     "attribution"      : "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors &copy; <a href=\"https://carto.com/attributions\">CARTO</a>",
     "subdomains"       : "abcd",
-    "center"           : [2.2137, 47.1793],
-    "zoom"             : 5,
+    "center"           : [ -0.5600023, 47.469994],
+    "zoom"             : 7,
     "maxZoom"          : 18,
     "minZoom"          : 2,
     "useMarkerCluster" : true,
@@ -20,7 +20,7 @@
     "item_marker_offset" : [ 0, 8 ],
     "item_marker_anchor" : "bottom",
 
-    "pinIconUrl"       : "/static/icons/icon_pin_plein_violet.svg",
+    "DEPRECATED_pinIconUrl" : "/static/icons/icon_pin_plein_violet.svg",
     "pinIconSize"      : {
       "highlighted" : [46, 46],
       "normal"      : [29, 29]
@@ -47,29 +47,9 @@
         "has_popup"           : true,
         "popup_config"        : {
           "action" : "mousemove",
-          "_COMMENT": "### DEPRECATED 'field' key",
-          "fields" : [
-            { "position" : "field_main_title", "field" : "nom", "prefix" : null, "suffix" : null, "class": "is-size-6 has-text-weight-semibold" },
-            { "position" : "field_info", "field" : null, "prefix" : "(cliquez pour + d'infos)", "suffix" : null, "class": "has-text-centered has-text-weight-light" }
-          ],
           "fields_settings": {
-            "Nom" :          { "position": "main_title", "prefix" : null, "suffix" : null, "class": "is-size-6 has-text-weight-semibold" },
-            "_gitribute_" :  { "position": "info",       "prefix" : "(cliquez pour + d'infos)", "suffix" : null, "class": "has-text-centered has-text-weight-light" }
-          }
-        },
-        "cards_settings": {
-          "mini": {
-            "Nom" :   { "position": "title" },
-            "Numéro SIREN" : { "position": "resume" },
-            "tags" :  { "position": "tags" } 
-          },
-          "detail": {
-            "Nom" :       { "position": "title" },
-            "orga" :      { "position": "resume" },
-            "Numéro SIREN" :     { "position": "description" },
-            "adress" :    { "position": "description" },
-            "dep_label" : { "position": "tags" },
-            "tags"  :     { "position": "tags" }
+            "NOM DU LIEU" : { "position": "main_title", "prefix" : null, "suffix" : null, "class": "is-size-6 has-text-weight-semibold" },
+            "_datami_" : { "position": "info",       "prefix" : "(cliquez pour + d'infos)", "suffix" : null, "class": "has-text-centered has-text-weight-light" }
           }
         },
 
@@ -139,8 +119,7 @@
         "is_activated"        : true,
         "is_live_data"        : false,
         "refresh_delay"       : 3000,
-
-        "is_drawer_open"      : false,
+        "is_default_visible"  : true,
 
         "is_source_distant"   : true,
         "_COMMENT_SOURCES_DISTANT": {
@@ -153,79 +132,22 @@
 
         "_COMMENT_SOURCES": "### list of choropleth sources",
         "sources" : [
-
-          { "_COMMENT": "### FR - régions",
-            "is_activated" : true,
-            "source_id" : "chorosource-regions",
-            "layer_id"  : "chorolayer-regions",
-            "is_default_visible" : true,
-            "max_zoom" : 10,
-            "min_zoom" : 0,
-
-            "source_url" : "https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/regions-version-simplifiee.geojson", 
-            "update_src_from_previous_layer" : false,
-
-            "need_aggregation" : true,
-            "polygon_prop_id" : "code",
-            "join_polygon_id_to_field"  : "reg_code_geo",
-            "agregated_data_field"      : "count_reg",
-            "fill_color": [
-              "interpolate",
-              ["linear"],
-              ["get", "count_reg" ],
-              0,  "#f2f3f3",
-              1,  "#d2ede9",
-              25,  "#67c1b5",
-              75,  "#18a28f",
-              100, "#158b7b",
-              150, "#106268"
-            ],
-            "fill_opacity"        : 0.3,
-            "fill_outline_color"  : "#004494",
-
-            "has_popup" : true, 
-            "popup_config" : {
-              "action" : "mousemove",
-              "_COMMENT": "### DEPRECATED 'fields' key",
-              "fields" : [
-                { "position" : "field_title",      "field" : "nom",       "prefix" : null,       "suffix" : null },
-                { "position" : "field_title_post", "field" : "code",      "prefix" : " (",       "suffix" : ")" },
-                { "position" : "field_value",      "field" : "count_reg", "prefix" : "total : ", "suffix" : " organisations" }
-              ],
-              "fields_settings": {
-                "nom" :        { "position": "title",      "prefix" : null,       "suffix" : null },
-                "code" :       { "position": "title_post", "prefix" : " (",       "suffix" : ")" },
-                "count_reg" :  { "position": "value",      "prefix" : "total : ", "suffix" : " organisations" }
-              }
-            },
-            "legend" : {
-              "position" : "bottom-right",
-              "title" : "Légende",
-              "scales" : [
-                { "value" : "> 30 organisations par région", "color" : "#106268"},
-                { "value" : "10 à 30 organisations par région",  "color" : "#158b7b"},
-                { "value" : "5 à 9 organisations par région",   "color" : "#67c1b5"},
-                { "value" : "1 à 4 organisations par région",   "color" : "#d2ede9"},
-                { "value" : "0 organisation par région",    "color" : "#f2f3f3"}
-              ]
-            }
-
-          },
           
           { "_COMMENT": "### FR - départements",
             "is_activated" : true,
             "source_id" : "chorosource-departements",
             "layer_id"  : "chorolayer-departements",
-            "is_default_visible" : false,
-            "max_zoom" : 10,
+            "is_default_visible" : true,
+            "max_zoom" : 9,
             "min_zoom" : 0,
 
             "source_url" : "https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements-version-simplifiee.geojson", 
+
             "update_src_from_previous_layer" : false,
 
             "need_aggregation" : true,
             "polygon_prop_id" : "code",
-            "join_polygon_id_to_field"  : "depcode",
+            "join_polygon_id_to_field"  : "DEPARTEMENT",
             "agregated_data_field"      : "count_dep",
             "fill_color": [
               "interpolate",
@@ -243,14 +165,8 @@
             "has_popup" : false, 
             "popup_config" : {
               "action" : "mousemove",
-              "_COMMENT": "### DEPRECATED 'fields' key",
-              "fields" : [
-                { "position" : "field_title",      "field" : "nom",       "prefix" : null,       "suffix" : null },
-                { "position" : "field_title_post", "field" : "code",      "prefix" : " (",       "suffix" : ")" },
-                { "position" : "field_value",      "field" : "count_dep", "prefix" : "total : ", "suffix" : " organisations" }
-              ],
               "fields_settings": {
-                "nom" :        { "position": "title",      "prefix" : null,       "suffix" : null },
+                "NOM DU LIEU" : { "position": "title",      "prefix" : null,       "suffix" : null },
                 "code" :       { "position": "title_post", "prefix" : " (",       "suffix" : ")" },
                 "count_dep" :  { "position": "value",      "prefix" : "total : ", "suffix" : " organisations" }
               }
@@ -290,29 +206,24 @@
     "layers_visibility" :{
       "is_activated"    : true,
       "is_drawer_open"  : false,
-      "layers_switches" : [ 
+      "layers_switches" : [
         {
-          "label" : "régions" ,
-          "layers" : [ "chorolayer-regions" ],
-          "default_visible" : true
+          "label" : "Lieux",
+          "layers" : [ "all-points" ], 
+          "default_visible" : true 
         },
         {
-          "label" : "départements",
+          "label" : "Départements",
           "layers" : [ "chorolayer-departements" ], 
-          "default_visible" : false 
+          "default_visible" : true 
         },
         {
-          "label" : "organisations", 
-          "layers" : [ "all-points" ],
-          "default_visible" : true
-        },
-        {
-          "label" : "clusters",
+          "label" : "Clusters",
           "layers" : [ "cluster-circles", "cluster-counts" ],
           "default_visible" : false
         },
         {
-          "label" : "radar",
+          "label" : "Radar",
           "layers" : [ "heatmap-layer" ],
           "default_visible" : false
         }

@@ -1,61 +1,49 @@
 {
   "fields": [
     {
-      "name": "Nom",
+      "name": "NOM DU LIEU",
       "sticky": true,
       "primaryKey": true
     },
     {
-      "name": "Présentation",
+      "name": "DESCRIPTION",
       "subtype": "longtext",
       "maxLength": 50
     },
     {
-      "name": "Site internet",
+      "name": "URL",
       "subtype": "link"
     },
     {
-      "name": "Contact",
-      "subtype": "email"
+      "name": "IMAGE",
+      "subtype": "image"
     },
     {
-      "name": "Domaine(s)",
+      "name": "LOGO",
+      "subtype": "image"
+    },
+    {
+      "name": "SOURCE_codes",
       "subtype": "tags",
-      "tagSeparator": ",",
+      "tagSeparator": "-",
       "allowNew": true
     },
     {
-      "name": "Statut juridique",
-      "subtype": "tag"
+      "name": "CONCAT_TYPO",
+      "subtype": "tags",
+      "tagSeparator": "-"
     },
     {
-      "name": "Fiche URSCOP",
-      "subtype": "link"
-    },
-    {
-      "name": "Adresse",
+      "name": "ADRESSE",
       "subtype": "longtext",
       "maxLength": 20
     },
     {
-      "name": "Département(s)",
-      "subtype": "tags",
-      "tagSeparator": ","
-    },
-    {
-      "name": "Région(s)",
-      "subtype": "tags",
-      "tagSeparator": ","
-    },
-    {
-      "name": "Numéro SIREN"
-    },
-    {
-      "name": "Latitude",
+      "name": "latitude",
       "subtype": "geopoint"
     },
     {
-      "name": "Longitude",
+      "name": "longitude",
       "subtype": "geopoint"
     },
     {
@@ -71,35 +59,35 @@
     {
       "api_name": "api-entreprise",
       "source_fields": [
-        { "name": "Numéro SIREN" }
+        { "name": "SIREN" }
       ],
-      "activate": true,
+      "activate": false,
       "api": "https://entreprise.data.gouv.fr/api/sirene/v3/unites_legales/{{Numéro SIREN}}",
       "results_fields": [
         {
           "resp_field": "unite_legale.etablissement_siege.latitude",
-          "map_to_field": "Latitude"
+          "map_to_field": "latitude"
         },
         {
           "resp_field": "unite_legale.etablissement_siege.longitude",
-          "map_to_field": "Longitude"
+          "map_to_field": "longitude"
         },
         {
           "resp_field": "unite_legale.etablissement_siege.geo_adresse",
-          "map_to_field": "Adresse"
+          "map_to_field": "ADRESSE"
         },
         {
           "resp_field": "unite_legale.etablissement_siege.code_postal",
-          "map_to_field": "Département(s)"
+          "map_to_field": "DEPARTEMENT"
         }
       ]
     },
     {
       "api_name": "adresse.gouv.fr",
       "source_fields": [
-        { "name": "Adresse" }
+        { "name": "ADRESSE" }
       ],
-      "activate": false,
+      "activate": true,
       "api": "api-ban",
       "results_fields": [
         { 
