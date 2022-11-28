@@ -25,42 +25,102 @@
       "format": "uri"
     },
     {
-      "name": "LOGO",
-      "title": "URL du logo du lieu",
-      "type": "string",
-      "format": "uri"
-    },
-    {
       "name": "ADRESSE",
       "type": "string"
     },
     {
-      "name": "DEPARTEMENT",
-      "type": "string"
-    },
-    {
-      "name": "SOURCE_codes",
-      "title": "Source des données",
-      "type": "string"
-    },
-    {
-      "name": "CONCAT_TYPO",
-      "title": "Typologie de lieu",
-      "type": "string"
+      "name": "SOURCE_codes_temp",
+      "title": "Source",
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "FTL",
+          "CAPTL",
+          "PiNG"
+        ] 
+      }
     },
     {
       "name": "PUBLICS",
-      "title": "Types de publics",
+      "title": "Publics",
       "type": "string"
     },
     {
       "name": "TYPOLOGIE",
       "title": "Typologie",
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "T",
+          "O",
+          "D",
+          "C"
+        ] 
+      }
+    },
+    {
+      "name": "MODELE_JURIDIQUE",
+      "title": "Modèle juridique",
       "type": "string"
     },
     {
-      "name": "DEPARTEMENT_NOM",
-      "title": "Département"
+      "name": "ESPACES PROPOSÉS",
+      "title": "Espaces",
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19"
+        ] 
+      }
+    },
+    {
+      "name": "DEPARTEMENT",
+      "title": "Département",
+      "constraints": {
+        "enum": [
+          "44",
+          "49",
+          "53",
+          "72"
+        ]
+      }
+    },
+    { 
+      "name": "ÉTAT DE VOTRE TIERS-LIEUX",
+      "title": "Etat de votre tiers-lieux",
+      "constraints": {
+        "enum": [
+          "En activité",
+          "En projet"
+        ]
+      }
+    },
+    {
+      "name": "FABRIQUE_DE_TERRITOIRE",
+      "title": "Fabrique de territoire",
+      "type": "boolean"
+    },
+    {
+      "name": "BOOL",
+      "type": "boolean"
     },
     {
       "name": "latitude",

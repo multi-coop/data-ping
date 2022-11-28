@@ -9,22 +9,14 @@
   <title>PING / tiers lieux</title>
 </head>
 
-<body style="background-color: #D7D7D7; padding: 1em;">
+<body style="background-color: white; padding: 1em;">
   <noscript>
     <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
       Please enable it to continue.</strong>
   </noscript>
-
-  <h2 id="title-demo" class="pt-6 title is-flex is-align-items-center is-justify-content-center has-text-white">
-    <p>
-      <a href="https://gitlab.com/multi-coop/datami" target="_blank">
-        <img src="https://gitlab.com/multi-coop/datami/-/raw/main/public/logo_DATAMI_title.png" alt="logo datami" style="height: 50px !important; width: auto !important">
-      </a>
-    </p>
-  </h2>
   
   <div class="container has-text-dark">
-    <div class="content my-6 px-6">
+    <!-- <div class="content my-6 px-6">
       <p class="is-size-6">
         L'import du widget <code>Datami</code> dans une page html permet d'afficher sur un site tiers des données hébergées sur github, gitlab ou dans un wiki.
       </p>
@@ -60,7 +52,7 @@
           </li>
         </ul>
       </p>
-    </div>
+    </div> -->
 
     <div style="background-color: white; margin: 1em;">
 
@@ -77,18 +69,20 @@
           {
             "title": "PING : base de données tiers-lieux",
             "activate": true,
-            "gitfile_test": "http://localhost:8802/statics/csv/geocoding/geocoded.csv",
-            "gitfile": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/csv/geocoding/geocoded.csv",
+            "localdev": false,
+            "gitfilelocal_": "http://localhost:8802/statics/csv/geocoding/Ping-tiers-lieux-dataset-geocoded-test.csv",
+            "gitfilelocal": "http://localhost:8802/statics/csv/geocoding/Ping-tiers-lieux-dataset-geocoded.csv",
+            "gitfile": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/csv/geocoding/Ping-tiers-lieux-dataset-geocoded.csv",
             "default-tab": true,
             "options": {
-              "height": "600px",
+              "height": "550px",
               "separator": ",",
               "lockcolumns": true,
               "customfilters": {
                 "activate": true,
                 "filterfields": [
                   {
-                    "name": "SOURCE_codes",
+                    "name": "SOURCE_codes_temp",
                     "filtering": "OR"
                   },
                   {
@@ -96,17 +90,27 @@
                     "filtering": "OR"
                   },
                   {
-                    "name": "CONCAT_TYPO",
+                    "name": "TYPOLOGIE",
+                    "filtering": "OR"
+                  },
+                  {
+                    "name": "MODELE_JURIDIQUE",
+                    "filtering": "OR"
+                  },
+                  {
+                    "name": "ESPACES PROPOSÉS",
                     "filtering": "OR"
                   }
                 ]
               },
               "schema": {
-                "file_": "http://localhost:8802/statics/json/Ping-tiers-lieux-schema.json",
+                "localdev": false,
+                "filelocal": "http://localhost:8802/statics/json/Ping-tiers-lieux-schema.json",
                 "file": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/json/Ping-tiers-lieux-schema.json"
               },
               "fields-custom-properties": {
-                "file_": "http://localhost:8802/statics/json/Ping-tiers-lieux-fields-custom-props.json",
+                "localdev": false,
+                "filelocal": "http://localhost:8802/statics/json/Ping-tiers-lieux-fields-custom-props.json",
                 "file": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/json/Ping-tiers-lieux-fields-custom-props.json"
               },
               "cardsview": {
@@ -119,9 +123,6 @@
                   "NOM DU LIEU": {
                     "position": "title"
                   },
-                  "LOGO": {
-                    "position": "logo"
-                  },
                   "IMAGE": {
                     "position": "image"
                   },
@@ -130,17 +131,21 @@
                   },
                   "DESCRIPTION": {
                     "position": "resume"
+                  },
+                  "TYPOLOGIE": {
+                    "position": "tags"
+                  },
+                  "DEPARTEMENT": {
+                    "position": "tags"
                   }
                 },
                 "detail": {
                   "NOM DU LIEU": {
                     "position": "title"
                   },
-                  "LOGO": {
-                    "position": "logo"
-                  },
                   "IMAGE": {
-                    "position": "image"
+                    "position": "image",
+                    "right": true
                   },
                   "ADRESSE": {
                     "position": "adress"
@@ -151,14 +156,15 @@
                   },
                   "DEPARTEMENT": {
                     "position": "tags",
-                    "block_title": "Département(s)"
+                    "block_title": "Département(s)",
+                    "right": true
                   },
                   "COMMUNE": {
                     "position": "tags",
                     "block_title": "Commune",
                     "right": true
                   },
-                  "CONCAT_TYPO": {
+                  "TYPOLOGIE": {
                     "position": "tags",
                     "block_title": "Typologie d&lsquo;usage",
                     "right": true
@@ -168,13 +174,29 @@
                     "block_title": "Type de public",
                     "right": true
                   },
+                  "MODELE_JURIDIQUE": {
+                    "position": "tags",
+                    "block_title": "Modèle juridique",
+                    "right": true
+                  },
+                  "SOURCE_codes_temp": {
+                    "position": "tags",
+                    "block_title": "Source",
+                    "right": true
+                  },
+                  "ESPACES PROPOSÉS": {
+                    "position": "tags",
+                    "block_title": "Espaces proposés",
+                    "right": true
+                  },
                   "URL": {
                     "position": "links",
                     "block_title": "Lien vers le site du lieu",
-                    "right": true
+                    "right": false
                   }
                 },
                 "templates": {
+                  "activate": false,
                   "siren": {
                     "use_on_mini": true,
                     "use_on_detail": true,
@@ -182,21 +204,6 @@
                       {
                         "text": {
                           "fr": "L‘organisation {{ nom }} est une {{ type }} et se situe dans le département {{ depcode }} ({{ dep_label }}) en région {{ reg_code_short }}."
-                        }
-                      },
-                      {
-                        "text": {
-                          "fr": "Cette commune représente une population de {{ pop_insee }} habitants."
-                        }
-                      },
-                      {
-                        "text": {
-                          "fr": "{{ nom }} publie sur {{ merge }} avec une plateforme de type {{ platform_clean }}."
-                        }
-                      },
-                      {
-                        "text": {
-                          "fr": "Cette organisation a publié {{ nb_ptf }} jeux de données sur sa plateforme et {{ nb_datagouv }} jeux sur data.gouv.fr."
                         }
                       },
                       {
@@ -209,7 +216,7 @@
                 },
                 "minimap": {
                   "activate": true,
-                  "right_side": true,
+                  "right_side": false,
                   "mapOptions": {
                     "zoom": 5,
                     "maxZoom": 18,
@@ -229,7 +236,8 @@
               "datavizview": {
                 "activate": true,
                 "default": false,
-                "file_": "http://localhost:8802/statics/json/Ping-tiers-lieux-dataviz-settings.json",
+                "localdev": false,
+                "filelocal": "http://localhost:8802/statics/json/Ping-tiers-lieux-dataviz-settings.json",
                 "file": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/json/Ping-tiers-lieux-dataviz-settings.json"
               },
               "mapview": {
@@ -242,7 +250,8 @@
                     },
                     "height": 800,
                     "cols": 12,
-                    "file_test": "http://localhost:8802/statics/json/Ping-tiers-lieux-map-settings.json",
+                    "localdev": false,
+                    "filelocal": "http://localhost:8802/statics/json/Ping-tiers-lieux-map-settings.json",
                     "file": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/json/Ping-tiers-lieux-map-settings.json"
                   }
                 ]
@@ -251,16 +260,41 @@
             "usertoken": ""
           },
           {
+            "title": "Démarche",
+            "activate": true,
+            "default-tab": false,
+            "localdev": false,
+            "gitfilelocal": "http://localhost:8802/statics/markdown/Ping-tiers-lieux-demarche.md",
+            "gitfile": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/markdown/Ping-tiers-lieux-demarche.md",
+            "onlypreview": true,
+            "usertoken": ""
+          },
+          {
             "title": "Schéma des données",
             "activate": true,
             "default-tab": false,
-            "gitfile_test": "http://localhost:8802/statics/json/Ping-tiers-lieux-schema.json",
+            "localdev": false,
+            "gitfilelocal": "http://localhost:8802/statics/json/Ping-tiers-lieux-schema.json",
             "gitfile": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/json/Ping-tiers-lieux-schema.json",
             "options": {
               "defaultDepth": 2,
-              "allowKeyEdit": true
+              "allowKeyEdit": false
             },
-            "onlypreview": false,
+            "onlypreview": true,
+            "usertoken": ""
+          },
+          {
+            "title": "Schéma complémentaire",
+            "activate": true,
+            "default-tab": false,
+            "localdev": false,
+            "gitfilelocal": "http://localhost:8802/statics/json/Ping-tiers-lieux-fields-custom-props.json",
+            "gitfile": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/json/Ping-tiers-lieux-fields-custom-props.json",
+            "options": {
+              "defaultDepth": 3,
+              "allowKeyEdit": false
+            },
+            "onlypreview": true,
             "usertoken": ""
           }
         ]'
@@ -268,20 +302,29 @@
       />
 
       <!-- DATAMI WIDGET'S APP.JS SCRIPT -->
-      <script src="https://datami-widget.multi.coop/js/app.js" type="text/javascript" defer></script>
+      <!-- <script src="https://datami-widget.multi.coop/js/app.js" type="text/javascript" defer></script> -->
+      <script src="https://deploy-preview-27--datami-widget.netlify.app/js/app.js" type="text/javascript" defer></script>
       <!-- <script src="http://localhost:8080/js/app.js" type="text/javascript" defer></script> -->
 
 
     </div>
 
-    <p id="page-credits" class="mt-6 has-text-centered has-text-white">
+    <h2 id="title-demo" class="pt-6 title is-flex is-align-items-center is-justify-content-center has-text-white">
+      <p>
+        <a href="https://datami.multi.coop" target="_blank">
+          <img src="https://gitlab.com/multi-coop/datami/-/raw/main/public/logo_DATAMI_title.png" alt="logo datami" style="height: 50px !important; width: auto !important">
+        </a>
+      </p>
+    </h2>
+
+    <p id="page-credits" class="mt-6 has-text-centered has-text-grey">
       Un projet numérique en partenariat avec
-      <a href="https://pingbase.net" target="_blank" class="has-text-white is-underlined">
+      <a href="https://pingbase.net" target="_blank" class="has-text-grey is-underlined">
         PING
       </a>
       <br>
       Codé par la coopérative numérique 
-      <a href="https://multi.coop" target="_blank" class="has-text-white is-underlined">
+      <a href="https://multi.coop" target="_blank" class="has-text-grey is-underlined">
         multi
       </a>
     </p>

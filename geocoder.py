@@ -1,3 +1,4 @@
+import os
 import argparse
 import csv
 from geopy.geocoders import BANFrance
@@ -9,7 +10,7 @@ parser = argparse.ArgumentParser(description="Geocode a csv dataset",
 
 parser.add_argument("-v", "--verbose", action="store_true", help="increase verbosity")
 parser.add_argument("src", help="Path to source dataset to geocode")
-parser.add_argument("-out", help="Path to source dataset to geocode", default="csv/geocoding/geocoded.csv")
+parser.add_argument("-out", help="Path to source dataset to geocode", default="csv/geocoding")
 parser.add_argument("-adress", "--col_adress", type=str, help="Column name of the line/item full adress", default='adresse_full')
 parser.add_argument("-sep", "--separator", type=str, help="CSV separator",  default=',')
 parser.add_argument("-debug", "--debug", type=bool, help="Debugging", default=False)
@@ -24,8 +25,13 @@ sep = args.separator
 col_adress = args.col_adress
 if debug: print("\n geocoder ... col_adress : ", col_adress)
 
+srcFilename = os.path.basename(args.src)
+if debug: print("\n geocoder ... srcFilename : ", srcFilename)
+outFile = f'{args.out}/{os.path.splitext(srcFilename)[0]}-geocoded.csv'
+if debug: print("\n geocoder ... outFile : ", outFile)
+
 inputFile = open(args.src, 'r')
-outputFile = open(args.out, 'w')
+outputFile = open(outFile, 'w')
 if debug: print("\n geocoder ... args.out : ", args.out)
 
 inputData = csv.reader(inputFile, delimiter=sep)

@@ -175,11 +175,11 @@
               "position" : "bottom-right",
               "title" : "Légende",
               "scales" : [
-                { "value" : "> 30 organisations par département", "color" : "#106268"},
-                { "value" : "10 à 30 organisations par département",  "color" : "#158b7b"},
-                { "value" : "5 à 9 organisations par département",   "color" : "#67c1b5"},
-                { "value" : "1 à 4 organisations par département",   "color" : "#d2ede9"},
-                { "value" : "0 organisation par département",    "color" : "#f2f3f3"}
+                { "value" : "> 30 lieux par département", "color" : "#106268"},
+                { "value" : "10 à 30 lieux par département",  "color" : "#158b7b"},
+                { "value" : "5 à 9 lieux par département",   "color" : "#67c1b5"},
+                { "value" : "1 à 4 lieux par département",   "color" : "#d2ede9"},
+                { "value" : "0 lieu par département",    "color" : "#f2f3f3"}
               ]
             }
 

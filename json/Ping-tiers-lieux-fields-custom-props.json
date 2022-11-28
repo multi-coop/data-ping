@@ -19,25 +19,30 @@
       "subtype": "image"
     },
     {
-      "name": "LOGO",
-      "subtype": "image"
-    },
-    {
       "name": "SOURCE",
       "subtype": "tags",
       "tagSeparator": "–",
       "allowNew": true
     },
     {
-      "name": "SOURCE_codes",
+      "name": "SOURCE_codes_temp",
       "subtype": "tags",
       "tagSeparator": "-",
-      "allowNew": true
-    },
-    {
-      "name": "CONCAT_TYPO",
-      "subtype": "tags",
-      "tagSeparator": "-"
+      "allowNew": true,
+      "definitions": [
+        {
+          "value": "FTL",
+          "label" : "France Tiers-Lieux"
+        },
+        {
+          "value": "CAPTL",
+          "label" : "Cap Tiers-Lieux"
+        },
+        {
+          "value": "PiNG",
+          "label" : "Association PiNG"
+        }
+      ]
     },
     {
       "name": "PUBLICS",
@@ -47,7 +52,112 @@
     {
       "name": "TYPOLOGIE",
       "subtype": "tags",
-      "tagSeparator": "-"
+      "tagSeparator": "-",
+      "definitions": [
+        {
+          "value": "T",
+          "label" : "Renouveler le travail"
+        },
+        {
+          "value": "O",
+          "label" : "Oeuvrer ensemble"
+        },
+        {
+          "value": "D",
+          "label" : "Découvrir collectivement"
+        },
+        {
+          "value": "C",
+          "label" : "Repenser ma consommation"
+        }
+      ]
+    },
+    {
+      "name": "MODELE_JURIDIQUE",
+      "subtype": "tag"
+    },
+    {
+      "name": "ESPACES PROPOSÉS",
+      "subtype": "tags",
+      "tagSeparator": "-",
+      "definitions": [
+        {
+          "value": "1",
+          "label" : "Bureau individuel"
+        },
+        {
+          "value": "2",
+          "label" : "Plateau coworking"
+        },
+        {
+          "value": "3",
+          "label" : "Atelier d'artistes"
+        },
+        {
+          "value": "4",
+          "label" : "Atelier d'artisan⋅es"
+        },
+        {
+          "value": "5",
+          "label" : "Cabinet pour les professionnels du bien-être"
+        },
+        {
+          "value": "6",
+          "label" : "Petit espace modulable (- 50 m2)"
+        },
+        {
+          "value": "7",
+          "label" : "Moyen espace modulable (entre 50 et 150 m2)"
+        },
+        {
+          "value": "8",
+          "label" : "Grand espace modulable (+150 m2)"
+        },
+        {
+          "value": "9",
+          "label" : "Espace de résidence ou de représentation artistique"
+        },
+        {
+          "value": "10",
+          "label" : "Espace pour des activités physiques (danse...)"
+        },
+        {
+          "value": "11",
+          "label" : "Laboratoire de transformation alimentaire"
+        },
+        {
+          "value": "12",
+          "label" : "Espace de bricolage / Fablab"
+        },
+        {
+          "value": "13",
+          "label" : "Espace de stockage"
+        },
+        {
+          "value": "14",
+          "label" : "Espace de vente (boutique...)"
+        },
+        {
+          "value": "15",
+          "label" : "Espace agricole"
+        },
+        {
+          "value": "16",
+          "label" : "Espace enfance (crèche...)"
+        },
+        {
+          "value": "17",
+          "label" : "Espace de vie sociale"
+        },
+        {
+          "value": "18",
+          "label" : "Espace bar / café"
+        },
+        {
+          "value": "19",
+          "label" : "Hébergement"
+        }
+      ]
     },
     {
       "name": "ADRESSE",
@@ -55,9 +165,57 @@
       "maxLength": 20
     },
     {
-      "name": "DEPARTEMENT_NOM",
+      "name": "DEPARTEMENT",
       "subtype": "tag",
-      "tagSeparator": "/"
+      "definitions": [
+        {
+          "value": "44",
+          "label" : "Loire-Atlantique"
+        },
+        {
+          "value": "49",
+          "label" : "Maine-et-Loire"
+        },
+        {
+          "value": "53",
+          "label" : "Mayenne"
+        },
+        {
+          "value": "72",
+          "label" : "Sarthe"
+        },
+        {
+          "value": "85",
+          "label" : "Vendée"
+        }
+      ]
+    },
+    { 
+      "name": "ÉTAT DE VOTRE TIERS-LIEUX",
+      "subtype": "tag"
+    },
+    {
+      "name": "FABRIQUE_DE_TERRITOIRE",
+      "booleanOptions": {
+        "true": {
+          "value": "OUI",
+          "label": "Oui"
+        },
+        "false": {
+          "value": "NON",
+          "label": "Non"
+        }
+      }
+    },
+    {
+      "name": "STEPS",
+      "subtype": "steptext",
+      "stepOptions": {
+        "stepStart": "Déroulé du projet",
+        "stepEnd": "Début du projet",
+        "stepSeparator": "//",
+        "stepTitleSeparator": "::"
+      }
     },
     {
       "name": "latitude",
@@ -66,14 +224,6 @@
     {
       "name": "longitude",
       "subtype": "geopoint"
-    },
-    {
-      "name": "Adhérent CoopTech"
-    },
-    {
-      "name": "Notes",
-      "subtype": "longtext",
-      "maxLength": 20
     }
   ],
   "consolidation": [
@@ -83,7 +233,7 @@
         { "name": "SIREN" }
       ],
       "activate": false,
-      "api": "https://entreprise.data.gouv.fr/api/sirene/v3/unites_legales/{{Numéro SIREN}}",
+      "api": "https://entreprise.data.gouv.fr/api/sirene/v3/unites_legales/{{SIREN}}",
       "results_fields": [
         {
           "resp_field": "unite_legale.etablissement_siege.latitude",
@@ -109,15 +259,31 @@
         { "name": "ADRESSE" }
       ],
       "activate": true,
-      "api": "api-ban",
+      "api": "https://api-adresse.data.gouv.fr/search/?q={{ADRESSE}}",
       "results_fields": [
         { 
-          "resp_field" : "latitude",
-          "map_to_field": "Latitude"
+          "resp_field" : "features.0.geometry.coordinates.1",
+          "map_to_field": "latitude"
         },
         { 
-          "resp_field" : "longitude",
-          "map_to_field": "Longitude"
+          "resp_field" : "features.0.geometry.coordinates.0",
+          "map_to_field": "longitude"
+        },
+        { 
+          "resp_field" : "features.0.properties.name",
+          "map_to_field": "BAN_adress"
+        },
+        { 
+          "resp_field" : "features.0.properties.label",
+          "map_to_field": "BAN_adress_full"
+        },
+        { 
+          "resp_field" : "features.0.properties.city",
+          "map_to_field": "BAN_city"
+        },
+        { 
+          "resp_field" : "features.0.properties.postcode",
+          "map_to_field": "BAN_postcode"
         }
       ]
     }
