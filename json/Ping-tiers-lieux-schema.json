@@ -123,12 +123,12 @@
       "type": "boolean"
     },
     {
-      "name": "latitude",
+      "name": "BAN_latitude",
       "title": "Latitude du siège",
       "type": "number"
     },
     {
-      "name": "longitude",
+      "name": "BAN_longitude",
       "title": "Longitude du siège",
       "type": "number"
     }
