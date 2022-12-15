@@ -218,11 +218,11 @@
       }
     },
     {
-      "name": "latitude",
+      "name": "BAN_latitude",
       "subtype": "geopoint"
     },
     {
-      "name": "longitude",
+      "name": "BAN_longitude",
       "subtype": "geopoint"
     }
   ],
@@ -237,11 +237,11 @@
       "results_fields": [
         {
           "resp_field": "unite_legale.etablissement_siege.latitude",
-          "map_to_field": "latitude"
+          "map_to_field": "BAN_latitude"
         },
         {
           "resp_field": "unite_legale.etablissement_siege.longitude",
-          "map_to_field": "longitude"
+          "map_to_field": "BAN_longitude"
         },
         {
           "resp_field": "unite_legale.etablissement_siege.geo_adresse",
@@ -263,11 +263,11 @@
       "results_fields": [
         { 
           "resp_field" : "features.0.geometry.coordinates.1",
-          "map_to_field": "latitude"
+          "map_to_field": "BAN_latitude"
         },
         { 
           "resp_field" : "features.0.geometry.coordinates.0",
-          "map_to_field": "longitude"
+          "map_to_field": "BAN_longitude"
         },
         { 
           "resp_field" : "features.0.properties.name",
