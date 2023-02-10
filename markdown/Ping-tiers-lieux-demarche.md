@@ -2,7 +2,7 @@
 
 # Présentation
 
-La carte des tiers-lieux en Pays de la Loire, proposée par PiNG avec le soutien de la Région, a pour objectif de donner à voir la dynamique tiers-lieux sur le territoire régional. Elle permet ainsi de faciliter l’identification des acteurs du mouvement et de valoriser le maillage de ces lieux sur la région.
+La carte des tiers-lieux en Pays de la Loire, proposée par PiNG avec le soutien de la Région et de l'Agence Nationale pour la Cohésion des Territoires, a pour objectif de donner à voir la dynamique tiers-lieux sur le territoire régional. Elle permet ainsi de faciliter l’identification des acteurs du mouvement et de valoriser le maillage de ces lieux sur la région.
 
 Elle assume la pluralité des visions de la notion de tiers-lieu des acteurs tête de réseaux sur le sujet (Association France Tiers-Lieux, CAP Tiers-Lieux et PiNG) en valorisant leurs différents jeux de données.
 
@@ -14,9 +14,7 @@ Bonne déambulation !
 
 ## Démarche
 
-La carte des tiers-lieux en Pays de la Loire, proposée par PiNG avec le soutien de la Région, a pour objectif de donner à voir la dynamique tiers-lieux sur le territoire régional. Elle permet ainsi de faciliter l’identification des acteurs du mouvement et de valoriser le maillage de ces lieux sur la région.
-
-D’apparente simplicité, si l’on extrait les aspects techniques d’un tel travail, cette mission s’est révélée plus complexe qu’elle n’y paraît, le sujet même de ce projet renvoyant à des visions multiples.
+D’apparente simplicité, si l’on extrait les aspects techniques d’un tel travail, cette mission de cartographie s’est révélée plus complexe qu’elle n’y paraît, le sujet même de ce projet renvoyant à des visions multiples.
 
 ## Tiers-lieux ou la pluralité des visions
 
