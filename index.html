@@ -30,9 +30,19 @@
         }'
         gitfiles='[
           {
+            "title": "Démarche",
+            "activate": true,
+            "default-tab": false,
+            "localdev": true,
+            "gitfilelocal": "http://localhost:8802/statics/markdown/Ping-tiers-lieux-demarche.md",
+            "gitfile": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/markdown/Ping-tiers-lieux-demarche.md",
+            "onlypreview": true,
+            "usertoken": ""
+          },
+          {
             "title": "Tiers lieux en Pays de la Loire",
             "activate": true,
-            "localdev": false,
+            "localdev": true,
             "gitfilelocal_": "http://localhost:8802/statics/csv/geocoding/Ping-tiers-lieux-dataset-geocoded-test.csv",
             "gitfilelocal": "http://localhost:8802/statics/csv/geocoding/Ping-tiers-lieux-dataset-geocoded.csv",
             "gitfile": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/csv/geocoding/Ping-tiers-lieux-dataset-geocoded.csv",
@@ -67,14 +77,30 @@
                 ]
               },
               "schema": {
-                "localdev": false,
+                "localdev": true,
                 "filelocal": "http://localhost:8802/statics/json/Ping-tiers-lieux-schema.json",
                 "file": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/json/Ping-tiers-lieux-schema.json"
               },
               "fields-custom-properties": {
-                "localdev": false,
+                "localdev": true,
                 "filelocal": "http://localhost:8802/statics/json/Ping-tiers-lieux-fields-custom-props.json",
                 "file": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/json/Ping-tiers-lieux-fields-custom-props.json"
+              },
+              "pagination":{
+                "itemsPerRow": 3,
+                "itemsPerPage": 20,
+                "itemsPerPageTable": 20,
+                "itemsPerPageCards": 12
+              },
+              "customsorting" : {
+                "activate": true,
+                "sortfields": [
+                  {
+                    "name": "NOM DU LIEU",
+                    "ascending": false,
+                    "random": true
+                  }
+                ]
               },
               "cardsview": {
                 "activate": true,
@@ -199,7 +225,7 @@
               "datavizview": {
                 "activate": true,
                 "default": false,
-                "localdev": false,
+                "localdev": true,
                 "filelocal": "http://localhost:8802/statics/json/Ping-tiers-lieux-dataviz-settings.json",
                 "file": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/json/Ping-tiers-lieux-dataviz-settings.json"
               },
@@ -213,7 +239,7 @@
                     },
                     "height": 900,
                     "cols": 12,
-                    "localdev": false,
+                    "localdev": true,
                     "filelocal": "http://localhost:8802/statics/json/Ping-tiers-lieux-map-settings.json",
                     "file": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/json/Ping-tiers-lieux-map-settings.json"
                   }
@@ -223,20 +249,10 @@
             "usertoken": ""
           },
           {
-            "title": "Démarche",
-            "activate": true,
-            "default-tab": false,
-            "localdev": false,
-            "gitfilelocal": "http://localhost:8802/statics/markdown/Ping-tiers-lieux-demarche.md",
-            "gitfile": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/markdown/Ping-tiers-lieux-demarche.md",
-            "onlypreview": true,
-            "usertoken": ""
-          },
-          {
             "title": "Schéma des données",
-            "activate": true,
+            "activate": false,
             "default-tab": false,
-            "localdev": false,
+            "localdev": true,
             "gitfilelocal": "http://localhost:8802/statics/json/Ping-tiers-lieux-schema.json",
             "gitfile": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/json/Ping-tiers-lieux-schema.json",
             "options": {
@@ -248,9 +264,9 @@
           },
           {
             "title": "Schéma complémentaire",
-            "activate": true,
+            "activate": false,
             "default-tab": false,
-            "localdev": false,
+            "localdev": true,
             "gitfilelocal": "http://localhost:8802/statics/json/Ping-tiers-lieux-fields-custom-props.json",
             "gitfile": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/json/Ping-tiers-lieux-fields-custom-props.json",
             "options": {
@@ -267,8 +283,8 @@
       <!-- DATAMI WIDGET'S APP.JS SCRIPT -->
       <!-- <script src="https://preprod--datami-widget.netlify.app/js/app.js" type="text/javascript" defer></script> -->
       <!-- <script src="https://deploy-preview-33--datami-widget.netlify.app/js/app.js" type="text/javascript" defer></script> -->
-      <!-- <script src="http://localhost:8080/js/app.js" type="text/javascript" defer></script> -->
-      <script src="https://datami-widget.multi.coop/js/app.js" type="text/javascript" defer></script>
+      <script src="http://localhost:8080/js/app.js" type="text/javascript" defer></script>
+      <!-- <script src="https://datami-widget.multi.coop/js/app.js" type="text/javascript" defer></script> -->
 
     </div>
   </div>

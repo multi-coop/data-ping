@@ -2,8 +2,7 @@
   "fields": [
     {
       "name": "NOM DU LIEU",
-      "sticky": true,
-      "primaryKey": true
+      "sticky": true
     },
     {
       "name": "DESCRIPTION",
@@ -22,12 +21,14 @@
       "name": "SOURCE",
       "subtype": "tags",
       "tagSeparator": "–",
+      "bgColor": "#00adb8",
       "allowNew": true
     },
     {
       "name": "SOURCE_codes_temp",
       "subtype": "tags",
       "tagSeparator": "-",
+      "bgColor": "#00adb8",
       "allowNew": true,
       "definitions": [
         {
@@ -47,12 +48,14 @@
     {
       "name": "PUBLICS",
       "subtype": "tags",
-      "tagSeparator": "–"
+      "tagSeparator": "–",
+      "bgColor": "#f59c00"
     },
     {
       "name": "TYPOLOGIE",
       "subtype": "tags",
       "tagSeparator": "-",
+      "bgColor": "#2d3744",
       "definitions": [
         {
           "value": "T",
@@ -74,12 +77,14 @@
     },
     {
       "name": "MODELE_JURIDIQUE",
-      "subtype": "tag"
+      "subtype": "tag",
+      "bgColor": "#00adb8"
     },
     {
       "name": "ESPACES PROPOSÉS",
       "subtype": "tags",
       "tagSeparator": "-",
+      "bgColor": "#f59c00",
       "definitions": [
         {
           "value": "1",
@@ -167,6 +172,7 @@
     {
       "name": "DEPARTEMENT",
       "subtype": "tag",
+      "bgColor": "#f59c00",
       "definitions": [
         {
           "value": "44",
@@ -192,7 +198,8 @@
     },
     { 
       "name": "ÉTAT DE VOTRE TIERS-LIEUX",
-      "subtype": "tag"
+      "subtype": "tag",
+      "bgColor": "#2D3744"
     },
     {
       "name": "FABRIQUE_DE_TERRITOIRE",
