@@ -30,6 +30,16 @@
         }'
         gitfiles='[
           {
+            "title": "Démarche",
+            "activate": true,
+            "default-tab": false,
+            "localdev": false,
+            "gitfilelocal": "http://localhost:8802/statics/markdown/Ping-tiers-lieux-demarche.md",
+            "gitfile": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/markdown/Ping-tiers-lieux-demarche.md",
+            "onlypreview": true,
+            "usertoken": ""
+          },
+          {
             "title": "Tiers lieux en Pays de la Loire",
             "activate": true,
             "localdev": false,
@@ -75,6 +85,22 @@
                 "localdev": false,
                 "filelocal": "http://localhost:8802/statics/json/Ping-tiers-lieux-fields-custom-props.json",
                 "file": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/json/Ping-tiers-lieux-fields-custom-props.json"
+              },
+              "pagination":{
+                "itemsPerRow": 3,
+                "itemsPerPage": 20,
+                "itemsPerPageTable": 20,
+                "itemsPerPageCards": 12
+              },
+              "customsorting" : {
+                "activate": true,
+                "sortfields": [
+                  {
+                    "name": "NOM DU LIEU",
+                    "ascending": false,
+                    "random": false
+                  }
+                ]
               },
               "cardsview": {
                 "activate": true,
@@ -223,18 +249,8 @@
             "usertoken": ""
           },
           {
-            "title": "Démarche",
-            "activate": true,
-            "default-tab": false,
-            "localdev": false,
-            "gitfilelocal": "http://localhost:8802/statics/markdown/Ping-tiers-lieux-demarche.md",
-            "gitfile": "https://github.com/multi-coop/data-ping-tiers-lieux/blob/main/markdown/Ping-tiers-lieux-demarche.md",
-            "onlypreview": true,
-            "usertoken": ""
-          },
-          {
             "title": "Schéma des données",
-            "activate": true,
+            "activate": false,
             "default-tab": false,
             "localdev": false,
             "gitfilelocal": "http://localhost:8802/statics/json/Ping-tiers-lieux-schema.json",
@@ -248,7 +264,7 @@
           },
           {
             "title": "Schéma complémentaire",
-            "activate": true,
+            "activate": false,
             "default-tab": false,
             "localdev": false,
             "gitfilelocal": "http://localhost:8802/statics/json/Ping-tiers-lieux-fields-custom-props.json",
