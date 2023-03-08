@@ -56,6 +56,7 @@
       "subtype": "tags",
       "tagSeparator": "-",
       "bgColor": "#2d3744",
+      "tagMaxLength": 15,
       "definitions": [
         {
           "value": "T",

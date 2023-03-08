@@ -72,11 +72,11 @@
         "is_source_distant"   : false,
         "is_clickable"        : true,
 
-        "circle_color"     : "#e5ecf4",
-        "circle_color_100" : "#b2c6de",
-        "circle_color_250" : "#668ebe",
-        "circle_color_500" : "#3269a9",
-        "circle_color_750" : "#004494",
+        "circle_color"     : "#00adb8",
+        "circle_color_100" : "#00adb8",
+        "circle_color_250" : "#00adb8",
+        "circle_color_500" : "#00adb8",
+        "circle_color_750" : "#00adb8",
 
         "circle_radius"     : 15, 
         "circle_radius_100" : 20, 
@@ -156,11 +156,11 @@
               "interpolate",
               ["linear"],
               ["get", "count_dep" ],
-              0,  "#f2f3f3",
-              1,  "#d2ede9",
-              5,  "#67c1b5",
-              10, "#158b7b",
-              30, "#106268"
+              0,  "#FFFFBE",
+              1,  "#FFD34D",
+              5,  "#F59C00",
+              10, "#D58200",
+              50, "#7A3900"
             ],
             "fill_opacity"        : 0.5,
             "fill_outline_color"  : "#004494",
@@ -178,11 +178,11 @@
               "position" : "bottom-right",
               "title" : "Légende",
               "scales" : [
-                { "value" : "> 30 lieux par département", "color" : "#106268"},
-                { "value" : "10 à 30 lieux par département",  "color" : "#158b7b"},
-                { "value" : "5 à 9 lieux par département",   "color" : "#67c1b5"},
-                { "value" : "1 à 4 lieux par département",   "color" : "#d2ede9"},
-                { "value" : "0 lieu par département",    "color" : "#f2f3f3"}
+                { "value" : "> 50 lieux par département", "color" : "#7A3900"},
+                { "value" : "10 à 50 lieux par département",  "color" : "#D58200"},
+                { "value" : "5 à 9 lieux par département",   "color" : "#F59C00"},
+                { "value" : "1 à 4 lieux par département",   "color" : "#FFD34D"},
+                { "value" : "0 lieu par département",    "color" : "#FFFFBE"}
               ]
             }
 
