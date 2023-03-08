@@ -231,6 +231,26 @@
     {
       "name": "BAN_longitude",
       "subtype": "geopoint"
+    },
+    {
+      "name": "BAN_adress",
+      "hide": true
+    },
+    {
+      "name": "BAN_adress_full",
+      "hide": true
+    },
+    {
+      "name": "BAN_city",
+      "hide": false
+    },
+    {
+      "name": "BAN_postcode",
+      "hide": true
+    },
+    {
+      "name": "BAN_depcode",
+      "hide": false
     }
   ],
   "consolidation": [

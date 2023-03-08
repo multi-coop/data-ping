@@ -26,6 +26,12 @@
     },
     {
       "name": "ADRESSE",
+      "title": "Adrese postale",
+      "type": "string"
+    },
+    {
+      "name": "TELEPHONE",
+      "title": "Téléphone",
       "type": "string"
     },
     {
@@ -131,6 +137,26 @@
       "name": "BAN_longitude",
       "title": "Longitude du siège",
       "type": "number"
+    },
+    {
+      "name": "BAN_adress",
+      "title": "Adresse (BAN)"
+    },
+    {
+      "name": "BAN_adress_full",
+      "title": "Adresse complète (BAN)"
+    },
+    {
+      "name": "BAN_city",
+      "title": "Ville"
+    },
+    {
+      "name": "BAN_postcode",
+      "title": "Code postal (BAN)"
+    },
+    {
+      "name": "BAN_depcode",
+      "title": "Code département"
     }
   ]
 }

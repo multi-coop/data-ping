@@ -141,7 +141,10 @@
             "max_zoom" : 9,
             "min_zoom" : 0,
 
-            "source_url" : "https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements-version-simplifiee.geojson", 
+            "source_url_all" : "https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements-version-simplifiee.geojson", 
+            "source_url_region_pdl" : "https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/regions/pays-de-la-loire/departements-pays-de-la-loire.geojson", 
+            "source_url_" : "https://raw.githubusercontent.com/multi-coop/data-ping-tiers-lieux/main/json/departements-pays-de-la-loire.json", 
+            "source_url" : "http://localhost:8802/statics/json/departements-pays-de-la-loire.json", 
 
             "update_src_from_previous_layer" : false,
 
